@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Loan Application </title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--<link rel="stylesheet"  href= "style.css"> Para correr Localmente -->
+    <!-- <script src="{{ url_for('static',filename='app.js') }}"></script>  Para correr localmente-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet"  href= "{{ url_for('static',filename='styles.css') }}"> 
+   <script src="{{ url_for('static',filename='app.js') }}"></script> 
+  </head>
+  <body>
+    <div class="testbox">
+    <form>
+      <div class="banner">
+        <h1>Loan Application</h1>
+      </div>
+
+      <div class="question" >
+        <p>Gender:<span class="required">*</span></p>
+        <div class="question-answer">
+          <input type="radio" value="Male" id="radio_1" name="Gender" required/>
+          <label for="radio_1" class="radio"><span>Male</span></label>
+          <input type="radio" value="Female" id="radio_2" name="Gender" required/>
+          <label for="radio_2" class="radio"><span>Female</span></label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>Married:<span class="required">*</span></p>
+        <div class="question-answer">
+          <input type="radio" value="Yes" id="radio_3" name="Married" required/>
+          <label for="radio_3" class="radio"><span>Yes</span></label>
+          <input type="radio" value="No" id="radio_4" name="Married" required/>
+          <label for="radio_4" class="radio"><span>No</span></label>
+        </div>
+      </div>
+
+      <div class="item">
+        <select id = 'Dependents' required>
+          <option value="">Dependents</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3+">3+</option>
+        </select>
+      </div>
+
+      <div class="question" >
+        <p>Education <span class="required">*</span></p>
+        <div class="question-answer">
+          <input type="radio" value="Graduated" id="radio_5" name="Education" required/>
+          <label for="radio_5" class="radio"><span>Graduated</span></label>
+          <input type="radio" value="Not Graduated" id="radio_6" name="Education" required/>
+          <label for="radio_6" class="radio"><span>Not Graduated</span></label>
+        </div>
+      </div>
+
+      <div class="question" >
+        <p>Self Employed<span class="required">*</span></p>
+        <div class="question-answer">
+          <input type="radio" value="Yes" id="radio_7" name="SelfEmployed" required/>
+          <label for="radio_7" class="radio"><span>Yes</span></label>
+          <input type="radio" value="No" id="radio_8" name="SelfEmployed" required/>
+          <label for="radio_8" class="radio"><span>No</span></label>
+        </div>
+      </div>
+      <div class="item">
+        <div class="city-item">
+          <input type="text" id="AppIncome" placeholder="Applicant Income" required/>
+          <input type="text" id="CoAppIncome" placeholder="Coapplicant Income" required/>
+        </div>
+      </div>
+      <div class="item">
+        <div class="city-item">
+          <input type="text" id="LoanAmount" placeholder="Loan Amount" required/>
+          <input type="text" id="LoanTerm" placeholder="Loan Amount Teerm" required/>
+        </div>
+      </div>
+      <div class="item">
+        <select required id='CreditHistory' name = 'CreditHistory'>
+          <option value="">Credit History</option>
+          <option value="1">All debts paid</option>
+          <option value="0">Not paid</option>
+        </select>
+      </div>
+      <div class="item">
+        <select required id = 'PropertyArea' name = 'PropertyArea'>
+          <option value="">Property Area</option>
+          <option value="Rural">Rural</option>
+          <option value="Urban">Urban</option>
+          <option value="Semiurban">SemiUrban</option>
+        </select>
+      </div>
+      
+        <div class="btn-block">
+          <button type = 'button' onclick="onClickedLoanPredict()" >Send Application</button>
+        </div>
+
+        <div id = 'result' role="alert">
+        </div>
+    </form>
+
+    
+
+    </div>
+  </body>
+</html>
