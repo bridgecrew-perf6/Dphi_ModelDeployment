@@ -34,8 +34,8 @@ def predict_loan():
         'result': res,
         'alert' : alert
     })
-
     response.headers.add('Access-Control-Allow-Origin', '*')
+    print(response)
     return response
 
 

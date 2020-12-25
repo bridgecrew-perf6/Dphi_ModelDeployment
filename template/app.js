@@ -1,5 +1,5 @@
 function onClickedLoanPredict() {
-    console.log("Estimate price button clicked");
+    console.log("Loan prediction clicked");
     // Simple values
     var appincome = document.getElementById('AppIncome').value;
     var coappincome = document.getElementById('CoAppIncome').value;
@@ -51,16 +51,13 @@ function onClickedLoanPredict() {
       },
       function (data, status) {
         console.log(data.result);
-        result.innerHTML =
-          "<h2>" + data.result.toString() + "</h2>";
-          result.classList.add(data.alert);
-          if ( result.classList.contains(data.alert)){
-            result.classList.toggle(data.alert);
-
-          }
-
-
+        console.log(data.alert);
+        result.innerHTML = "<h2>" + data.result + "</h2>";
+        result.className = data.alert;
         
+
+
+      
         console.log(status);
       }
     );
