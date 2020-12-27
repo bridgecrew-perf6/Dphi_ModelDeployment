@@ -25,10 +25,10 @@ def predict_loan():
     property_area= request.form['property_area']
     pred = utils.get_prediction(gender, married, dependents, education, self_employed, appincome, coappincome, loanamount, loanterm, credit_history, property_area)
     if pred == 1:
-        res = 'YES ! Nice! Probably you get Loan!'
+        res = 'Approved'
         alert = 'alert alert-success'
     else:
-        res = 'Sorry! ): Probably you do not get the Loan'
+        res = 'Rejected'
         alert = 'alert alert-danger'
     response = jsonify({
         'result': res,
